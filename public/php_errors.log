@@ -1,0 +1,5 @@
+[12-May-2014 03:15:56 UTC] PHP Notice:  Use of undefined constant PROGRAM_DIR_DIR - assumed 'PROGRAM_DIR_DIR' in /var/www/math_app/app/class/controllers/model.php on line 25
+[12-May-2014 03:15:56 UTC] PHP Stack trace:
+[12-May-2014 03:15:56 UTC] PHP   1. {main}() /var/www/math_app/public/index.php:0
+[12-May-2014 03:15:56 UTC] PHP   2. Main_Controller->load() /var/www/math_app/public/index.php:27
+[12-May-2014 03:15:56 UTC] PHP   3. Model_Controller->load_model() /var/www/math_app/app/class/controllers/main.php:39
