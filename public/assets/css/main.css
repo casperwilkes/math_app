@@ -1,0 +1,11 @@
+/* 
+    Purpose: This is for any extra styles that are not covered in the CSS Framework.
+    Author: Casper Wilkes <casper@casperwilkes.net>
+*/
+
+.indent {
+    margin-left: 1em;
+}
+header, #program_name {
+    margin-bottom: 1em !important;
+}

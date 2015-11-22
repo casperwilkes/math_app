@@ -1,0 +1,38 @@
+{# This is the base template that all other templates extend from #}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Math App | {{ title | title }}</title>
+        <link type="text/css" rel="stylesheet" media="all" href="{{baseUrl}}/assets/css/normalize.css">
+        <link type="text/css" rel="stylesheet" media="all" href="{{baseUrl}}/assets/css/foundation.min.css">
+        <link type="text/css" rel="stylesheet" media="all" href="{{baseUrl}}/assets/css/main.css">
+        <base href="{{ baseUrl }}/">
+    </head>
+    <body>
+
+        <header>
+            <div class="row">
+                <div class="text-center">
+                    <h1 class="h5">Math App</h1>
+                </div>
+            </div>
+        </header>
+
+        <main role="main">
+            <div class="row">
+                {% block content %} Nothing to see here {% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <div class="row">
+                <div class="large-10 large-offset-1 columns text-right">
+                    &copy; {{ "NOW" | date('Y') }} Math App
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

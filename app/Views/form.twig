@@ -1,0 +1,14 @@
+{# This is the base form for all of the programs to run through #}
+
+<form action="{{ form_action }}" method="POST">
+    <div class="row">
+        {% for name, label in fields %}
+            {# Dynamically generated input fields #}
+            <div class="large-4 medium-4 small-4 columns end">
+                <label for="{{ name }}" class="show-for-large-up">{{ label | title}}</label>
+                <input type="text" id="{{ name }}" name="{{ name }}" placeholder="{{label |title}}" value="">
+            </div>
+        {% endfor %}
+    </div>
+    <p><input type="submit" name="submit" value="Calculate" class="tiny radius button"></p>
+</form>

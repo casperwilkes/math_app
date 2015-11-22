@@ -1,0 +1,29 @@
+{# This is the error template for when a user tries to access a program that does not exist #}
+
+{% extends "template.twig"%}
+
+{% block content %}
+    <div class="panel alert radius">
+
+        <!-- Error header -->
+        <div class="row">
+            <div class="text-center large-4 large-offset-4 columns">
+                <h1>404</h1>
+                <h4>Page Not Found</h4>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="row">
+            <div class="large-10 large-offset-1 columns">
+                <p>The page you are looking for could not be found. Check the address bar to 
+                    ensure your URL is spelled correctly. If all else fails, you can visit our 
+                    home page at the link below.</p>
+
+                <!-- Back button -->
+                <p><a href="{{ baseUrl }}" title="Return to Home" class="button radius info small">Return to the Home page</a></p>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

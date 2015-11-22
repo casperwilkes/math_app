@@ -1,0 +1,58 @@
+{# This is the main program template that will display all of the programs #}
+
+{% extends "template.twig" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="large-10 large-offset-1 medium-10 medium-offset-1 small-10 small-offset-1 columns">
+
+            <!-- Program header -->
+            <div id="program_name" class="row">
+                <h2 class="text-center">{{ title | title}}</h2>
+            </div>
+            
+            <!-- Back button -->
+            <div class="row">
+                <p><a href="{{ baseUrl }}" class="tiny secondary round button">Back to Index</a></p>
+            </div>
+
+            <!-- Example block -->
+            <div class="row">
+                <div class="callout">
+                    <p>
+                        <strong>Example:</strong>
+                        {# Check if the example contains a table. Tables require a different output #}
+                        {% if 'table' in example %}
+                            {{ example | raw }}
+                        {% else %}
+                            <br>
+                            <span class="indent" >{{ example | raw }}</span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="row">
+                {% if fields is not empty %}
+                    {% include 'form.twig' %}
+                {% endif %}
+            </div>
+
+            {% if answer | length %}
+                <!-- Answer block -->
+                <div class="row">
+                    <div class="callout">
+                        <p>
+                            <strong>Your answer is:</strong><br>
+                            <span class="indent">{{ answer |striptags('<br>') | raw }}</span>
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}

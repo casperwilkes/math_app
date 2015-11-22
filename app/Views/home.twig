@@ -1,0 +1,21 @@
+{# This template is the main page. It displays all of the available programs in a list #}
+
+{% extends "template.twig" %}
+
+{% block content %}
+    <!-- List of programs -->
+    <div class="large-6 large-offset-3 columns text-center">
+        {% for program, description in programs %}
+            {% set name = program | replace({'_':' '}) | title | trim %}
+            {% set anchor = program | replace({'_':''}) | lower | trim %}
+
+            <p>
+                <a href="{{ baseUrl }}/program/{{ anchor }}" title="{{ name }}">{{ name }}</a><br>
+                {{ description | trim | capitalize }}
+            </p>
+
+            <hr>
+        {% endfor %}
+    </div>
+
+{% endblock %}
